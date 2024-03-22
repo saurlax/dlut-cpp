@@ -34,8 +34,9 @@ class Date {
     if (!valid) year = 2000, month = 1, day = 1;
     year = y, month = m, day = d;
   }
-  string toString() {
-    return to_string(year) + "-" + to_string(month) + "-" + to_string(day);
+  friend ostream& operator<<(ostream& os, const Date& d) {
+    os << d.year << "-" << d.month << "-" << d.day;
+    return os;
   }
 };
 
@@ -53,7 +54,7 @@ class People {
     cout << "Number: " << number << endl;
     cout << "Name: " << name << endl;
     cout << "Sex: " << (sex ? "Male" : "Female") << endl;
-    cout << "Birthday: " << birthday.toString() << endl;
+    cout << "Birthday: " << birthday << endl;
     cout << "ID: " << id << endl;
   }
 };
