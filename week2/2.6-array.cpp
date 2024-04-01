@@ -6,32 +6,32 @@
 using namespace std;
 
 class Array {
-  int* data;
+  int* m_data;
   int n;
 
  public:
   Array(int n) : n(n) {
-    data = new int[n];
-    for (int i = 0; i < n; i++) data[i] = 0;
+    m_data = new int[n];
+    for (int i = 0; i < n; i++) m_data[i] = 0;
   }
 
   Array(const Array& other) : n(other.n) {
-    data = new int[n];
-    for (int i = 0; i < n; i++) data[i] = other.data[i];
+    m_data = new int[n];
+    for (int i = 0; i < n; i++) m_data[i] = other.m_data[i];
   }
 
-  ~Array() { delete[] data; }
+  ~Array() { delete[] m_data; }
 
   void print() {
-    for (int i = 0; i < n; i++) cout << data[i] << " ";
+    for (int i = 0; i < n; i++) cout << m_data[i] << " ";
     cout << endl;
   }
 
   void input() {
-    for (int i = 0; i < n; i++) cin >> data[i];
+    for (int i = 0; i < n; i++) cin >> m_data[i];
   }
 
-  void set(int index, int value) { data[index] = value; }
+  void set(int index, int value) { m_data[index] = value; }
 };
 
 int main() {
